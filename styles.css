@@ -1,0 +1,35 @@
+/* Daniel Fletcher */
+/* The Odin Project: Foundations */
+/* Calculator */
+
+
+.calculator {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+
+.calc-row {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.calc-row > * {
+  font-size: 1.5rem;
+
+  width: 3.5em;
+  height: 2.75em;
+}
+
+.calculator > .calc-row-4 > .digit-0 {
+  width: 7em;
+}
+
+
+.display-content {
+  font-size: 2rem;
+  font-weight: bold;
+  text-align: center;
+}
