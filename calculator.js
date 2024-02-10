@@ -26,3 +26,12 @@ function operate(num1, num2, operator) {
             return undefined;
     }
 }
+
+
+const display = document.querySelector('.display-content');
+const digitButtons = document.querySelectorAll('.digit');
+digitButtons.forEach(button => {
+    button.addEventListener('click', function() {
+        display.textContent = this.value;
+    });
+});
