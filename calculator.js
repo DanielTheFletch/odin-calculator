@@ -3,9 +3,11 @@
 // Calculator
 
 
+// Delegate mathematical logic to separate file
 import { operate } from './operations.js'
 
 
+// State management
 const state = {
     display: '',
     first: '',
@@ -15,6 +17,7 @@ const state = {
 };
 
 
+// Set up 0-9 digit buttons
 const display = document.querySelector('.display-content');
 const digitButtons = document.querySelectorAll('.digit');
 digitButtons.forEach(button => {
@@ -31,6 +34,7 @@ digitButtons.forEach(button => {
 });
 
 
+// Set up operator (+, -, *, /) buttons
 const operatorButtons = document.querySelectorAll('.operator');
 operatorButtons.forEach(button => {
     button.addEventListener('click', function() {
@@ -41,6 +45,7 @@ operatorButtons.forEach(button => {
 });
 
 
+// Set up equals (=) function
 const equalsButton = document.querySelector('.equals');
 equalsButton.addEventListener('click', function() {
     if (state.first && !state.operatorClicked)
@@ -53,6 +58,7 @@ equalsButton.addEventListener('click', function() {
 });
 
 
+// Set up clear (AC) function
 const clearButton = document.querySelector('.func-clear');
 clearButton.addEventListener('click', function() {
     state.first = state.second = '';
