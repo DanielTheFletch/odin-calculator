@@ -63,8 +63,21 @@ operatorButtons.forEach(button => {
 
 const equalsButton = document.querySelector('.equals');
 equalsButton.addEventListener('click', function() {
-    secondValue = parseInt(displayValue);
-    displayValue = operate(firstValue, secondValue, operator);
+    if (firstValue && !operatorClicked)
+    {
+        secondValue = parseInt(displayValue);
+        displayValue = operate(firstValue, secondValue, operator);
+        display.textContent = displayValue;
+        operatorClicked = true;
+    }
+});
+
+
+const clearButton = document.querySelector('.func-clear');
+clearButton.addEventListener('click', function() {
+    firstValue = secondValue = '';
+    displayValue = 0;
+    operatorClicked = false;
+
     display.textContent = displayValue;
-    operatorClicked = true;
-})
+});

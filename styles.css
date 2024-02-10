@@ -30,7 +30,7 @@
 }
 
 
-/* --- CALCULATOR BUTTONS */
+/* --- CALCULATOR BUTTONS --- */
 .calc-row > button {
   font-size: 1.5rem;
 
@@ -40,4 +40,8 @@
 
 .calc-row > button.digit-0 {
   width: calc(var(--button-width) * 2);
+}
+
+.calc-row > button.func-clear {
+  width: calc(var(--button-width) * 4);
 }
