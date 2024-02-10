@@ -28,10 +28,43 @@ function operate(num1, num2, operator) {
 }
 
 
+let displayValue = '';
+let firstValue = '';
+let secondValue = '';
+let operator = '';
+let operatorClicked = false;
+
+
 const display = document.querySelector('.display-content');
 const digitButtons = document.querySelectorAll('.digit');
 digitButtons.forEach(button => {
     button.addEventListener('click', function() {
-        display.textContent = this.value;
+        if (operatorClicked)
+        {
+            displayValue = '';
+            operatorClicked = false;
+        }
+
+        displayValue += this.value;
+        display.textContent = displayValue;
     });
 });
+
+
+const operatorButtons = document.querySelectorAll('.operator');
+operatorButtons.forEach(button => {
+    button.addEventListener('click', function() {
+        firstValue = parseInt(displayValue);
+        operator = button.value;
+        operatorClicked = true;
+    });
+});
+
+
+const equalsButton = document.querySelector('.equals');
+equalsButton.addEventListener('click', function() {
+    secondValue = parseInt(displayValue);
+    displayValue = operate(firstValue, secondValue, operator);
+    display.textContent = displayValue;
+    operatorClicked = true;
+})
