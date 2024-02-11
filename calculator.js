@@ -66,7 +66,7 @@ digitButtons.forEach(button => {
 const operatorButtons = document.querySelectorAll('.operator');
 operatorButtons.forEach(button => {
     button.addEventListener('click', function() {
-        if (!operation.selected)
+        if (!operation.selected && state.display)
         {
             // Allow for chaining multiple operations together
             if (operation.inProgress)
