@@ -38,7 +38,14 @@ const updateDisplayArea = () => displayArea.textContent = state.display;
 
 // Compute the currently in-progress operation
 function compute() {
-    state.display = operate(state.first, state.second, state.operator);
+    let result = operate(state.first, state.second, state.operator).toString();
+
+    // Truncate to 10 digits on display
+    if (result.length > 10)
+        result = result.substring(0, 10);
+
+    state.display = result;
+
     updateDisplayArea();
 }
 
@@ -56,8 +63,11 @@ digitButtons.forEach(button => {
         }
 
         // Track and display current operand
-        state.display += this.value;
-        updateDisplayArea();
+        if (state.display.length < 10)
+        {
+            state.display += this.value;
+            updateDisplayArea();
+        }
     });
 });
 
