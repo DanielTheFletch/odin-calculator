@@ -9,18 +9,28 @@
   --button-height: 2.75em;
 }
 
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 
 /* --- CALCULATOR LAYOUT --- */
 .calculator {
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: flex-end;
+}
+
+.display-container{
+  width: calc(var(--button-width) * 4);
 }
 
 .display-content {
   font-size: 2rem;
   font-weight: bold;
-  text-align: center;
+  text-align: right;
 }
 
 .calc-row {
@@ -38,10 +48,6 @@
   height: var(--button-height);
 }
 
-.calc-row > button.digit-0 {
-  width: calc(var(--button-width) * 2);
-}
-
-.calc-row > button.func-clear, .calc-row > button.digit-decimal {
-  width: calc(var(--button-width) * 2);
+.calc-row > button.func-clear {
+  width: calc(var(--button-width) * 4);
 }

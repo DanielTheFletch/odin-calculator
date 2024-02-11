@@ -38,11 +38,11 @@ const updateDisplayArea = () => displayArea.textContent = state.display;
 
 // Compute the currently in-progress operation
 function compute() {
-    let result = operate(state.first, state.second, state.operator).toString();
+    let result = operate(state.first, state.second, state.operator);
 
     // Truncate to 10 digits on display
-    if (result.length > 10)
-        result = result.substring(0, 10);
+    if (typeof result === 'number' && result.toString().length > 10)
+        result = result.toString().substring(0, 10);
 
     state.display = result;
 
@@ -71,7 +71,7 @@ digitButtons.forEach(button => {
         {
             if (validDecimal && !state.display)
                 state.display += '0';
-            
+
             state.display += this.value;
             updateDisplayArea();
         }
