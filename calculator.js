@@ -69,6 +69,9 @@ digitButtons.forEach(button => {
         // Track and display current operand
         if (validDigit || validDecimal)
         {
+            if (validDecimal && !state.display)
+                state.display += '0';
+            
             state.display += this.value;
             updateDisplayArea();
         }
