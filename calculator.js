@@ -17,8 +17,8 @@ const state = {
 
 
 // State management: Functions
-const updateFirst = () => state.first = parseInt(state.display);
-const updateSecond = () => state.second = parseInt(state.display);
+const updateFirst = () => state.first = parseFloat(state.display);
+const updateSecond = () => state.second = parseFloat(state.display);
 const clearDisplay = () => state.display = '';
 
 
@@ -62,8 +62,12 @@ digitButtons.forEach(button => {
             operation.complete = false;
         }
 
+        // Check for decimal insertion
+        const validDecimal = this.value === '.' && !state.display.includes('.');
+        const validDigit = this.value !== '.' && state.display.length < 10;
+
         // Track and display current operand
-        if (state.display.length < 10)
+        if (validDigit || validDecimal)
         {
             state.display += this.value;
             updateDisplayArea();

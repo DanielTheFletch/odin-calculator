@@ -42,6 +42,6 @@
   width: calc(var(--button-width) * 2);
 }
 
-.calc-row > button.func-clear {
-  width: calc(var(--button-width) * 4);
+.calc-row > button.func-clear, .calc-row > button.digit-decimal {
+  width: calc(var(--button-width) * 2);
 }
