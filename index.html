@@ -14,51 +14,115 @@
     <body>
       <div class="calculator">
         <div class="display-container">
-          <span class="display-content">0</span>
+          <span class="display-content">
+            0
+          </span>
         </div>
 
         <div class="calc-row calc-row-0">
-          <button>&pi;</button>
-          <button>e</button>
-          <button class="func func-clear">AC</button>
-          <button>&plusmn;</button>
-          <button>%</button>
-          <button class="operator operator-divide" value="/">&divide;</button>
+          <button class="constant constant-pi">
+            &pi;
+          </button>
+          <button class="constant constant-e">
+            e
+          </button>
+          <button class="func func-clear">
+            AC
+          </button>
+          <button class="func func-sign-toggle">
+            &plusmn;
+          </button>
+          <button class="func func-percent">
+            %
+          </button>
+          <button class="operator operator-divide" value="/">
+            &divide;
+          </button>
         </div>
 
         <div class="calc-row calc-row-1">
-          <button>x<sup>2</sup></button>
-          <button>x<sup>y</sup></button>
-          <button class="digit digit-7" value="7">7</button>
-          <button class="digit digit-8" value="8">8</button>
-          <button class="digit digit-9" value="9">9</button>
-          <button class="operator operator-multiply" value="*">&times;</button>
+          <button class="operator operator-unary operator-squared">
+            x<sup>2</sup>
+          </button>
+          <button class="operator operator-binary operator-squared">
+            x<sup>y</sup>
+          </button>
+          <button class="digit digit-7" value="7">
+            7
+          </button>
+          <button class="digit digit-8" value="8">
+            8
+          </button>
+          <button class="digit digit-9" value="9">
+            9
+          </button>
+          <button class="operator operator-multiply" value="*">
+            &times;
+          </button>
         </div>
 
         <div class="calc-row calc-row-2">
-          <button>&radic;<span class="radical"><span class="radicand">&nbsp;x&nbsp;</span></span></button>
-          <button><sup>y</sup><span class="radical">&radic;<span class="radicand">&nbsp;x&nbsp;</span></span></button>
-          <button class="digit digit-4" value="4">4</button>
-          <button class="digit digit-5" value="5">5</button>
-          <button class="digit digit-6" value="6">6</button>
-          <button class="operator operator-subtract" value="-">&minus;</button>
+          <button class="operator operator-unary operator-square-root">
+            <span class="radical">&radic;<span class="radicand">
+              &nbsp;x&nbsp;
+            </span></span>
+          </button>
+          <button class="operator operator-binary operator-nth-root">
+            <sup>y</sup><span class="radical">&radic;<span class="radicand">
+              &nbsp;x&nbsp;
+            </span></span>
+          </button>
+          <button class="digit digit-4" value="4">
+            4
+          </button>
+          <button class="digit digit-5" value="5">
+            5
+          </button>
+          <button class="digit digit-6" value="6">
+            6
+          </button>
+          <button class="operator operator-subtract" value="-">
+            &minus;
+          </button>
         </div>
 
         <div class="calc-row calc-row-3">
-          <button>x!</button>
-          <button><sup>1</sup> &frasl; <sub>x</sub></button>
-          <button class="digit digit-1" value="1">1</button>
-          <button class="digit digit-2" value="2">2</button>
-          <button class="digit digit-3" value="3">3</button>
-          <button class="operator operator-add" value="+">&plus;</button>
+          <button class="operator operator-unary operator-factorial">
+            x!
+          </button>
+          <button class="operator operator-unary operator-inverse">
+            <sup>1</sup> &frasl; <sub>x</sub>
+          </button>
+          <button class="digit digit-1" value="1">
+            1
+          </button>
+          <button class="digit digit-2" value="2">
+            2
+          </button>
+          <button class="digit digit-3" value="3">
+            3
+          </button>
+          <button class="operator operator-add" value="+">
+            &plus;
+          </button>
         </div>
 
         <div class="calc-row calc-row-4">
-          <button>log<sub>2</sub> x</button>
-          <button>ln x</button>
-          <button class="digit digit-0" value="0">0</button>
-          <button class="digit digit-decimal" value=".">.</button>
-          <button class="equals" value="=">&equals;</button>
+          <button class="operator operator-unary operator-log-base-2">
+            log<sub>2</sub> x
+          </button>
+          <button class="operator operator-unary operator-natural-log">
+            ln x
+          </button>
+          <button class="digit digit-0" value="0">
+            0
+          </button>
+          <button class="digit digit-decimal" value=".">
+            .
+          </button>
+          <button class="func func-equals" value="=">
+            &equals;
+          </button>
         </div>
       </div>
     </body>
