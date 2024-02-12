@@ -13,6 +13,9 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
+
+  margin: 0;
+  padding: 0;
 }
 
 
@@ -21,6 +24,8 @@ body {
   display: flex;
   flex-direction: column;
   align-items: flex-end;
+
+  margin-top: calc(var(--button-height) * 2.675);
 }
 
 .display-container {
