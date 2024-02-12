@@ -26,7 +26,8 @@ const clearDisplay = () => state.display = '';
 const operation = {
     complete: false,
     inProgress: false,
-    selected: false
+    selected: false,
+    unaryExecuted: false,
 };
 
 
@@ -37,8 +38,8 @@ const updateDisplayArea = () => displayArea.textContent = state.display;
 
 
 // Compute the currently in-progress operation
-function compute() {
-    let result = operate(state.first, state.second, state.operator);
+function compute(num1, operator, num2 = '') {
+    let result = operate(num1, num2, operator);
 
     // Truncate to 10 digits on display
     if (typeof result === 'number' && result.toString().length > 10)
@@ -79,18 +80,41 @@ digitButtons.forEach(button => {
 });
 
 
+// Set up unary operator buttons (x ^ 2, sqrt(x), x!, 1/x, log x, ln x)
+const unaryOperatorButtons = document.querySelectorAll('.operator-unary');
+unaryOperatorButtons.forEach(button => {
+    button.addEventListener('click', function() {
+        if (!operation.selected && state.display)
+        {
+            // Instantly perform operation on display value
+            const unaryOperator = this.value;
+            const unaryOperand = displayArea.textContent;
+            compute(unaryOperand, unaryOperator);
+            operation.unaryExecuted = true;
+        }
+    });
+});
+
+
 // Set up binary operator buttons (+, -, *, /, x ^ y, y root x)
-const operatorButtons = document.querySelectorAll('.operator-binary');
-operatorButtons.forEach(button => {
+const binaryOperatorButtons = document.querySelectorAll('.operator-binary');
+binaryOperatorButtons.forEach(button => {
     button.addEventListener('click', function() {
         if (!operation.selected && state.display)
         {
             // Allow for chaining multiple operations together
             if (operation.inProgress)
             {
+                // Check for unary operator usage
+                if (operation.unaryExecuted)
+                {
+                    state.display = displayArea.textContent;
+                    operation.unaryExecuted = false;
+                }
+                
                 // Perform intermediary calculation
                 updateSecond();
-                compute();
+                compute(state.first, state.operator, state.second);
             }
             
             // Update values for mid-operation status
@@ -108,9 +132,16 @@ const equalsButton = document.querySelector('.func-equals');
 equalsButton.addEventListener('click', function() {
     if (operation.inProgress && !operation.selected)
     {
+        // Check for unary operator usage
+        if (operation.unaryExecuted)
+        {
+            state.display = displayArea.textContent;
+            operation.unaryExecuted = false;
+        }
+
         // Perform final calculation
         updateSecond();
-        compute();
+        compute(state.first, state.operator, state.second);
 
         // Update values for end-of-operation status
         operation.inProgress = false;

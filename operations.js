@@ -4,15 +4,24 @@
 
 
 // Required mathematical operations
-const add = (num1, num2) => num1 + num2;
-const subtract = (num1, num2) => num1 - num2;
-const multiply = (num1, num2) => num1 * num2;
-const divide = (num1, num2) => ((num2 === 0) ? 'ERROR' : (num1 / num2));
+const add = (x, y) => x + y;
+const subtract = (x, y) => x - y;
+const multiply = (x, y) => x * y;
+const divide = (x, y) => ((y === 0) ? 'ERROR' : (x / y));
+
+
+// Additional unary operations
+const squared = x => Math.pow(x, 2);
+const squareRoot = x => Math.sqrt(x);
+const factorial = x => recursiveFactorial(Math.round(x));
+const inverse = x => ((x === 0) ? 'ERROR' : (1 / x));
+const log2 = x => Math.log2(x);
+const ln = x => Math.ln(x);
 
 
 // Additional binary operations
-const nthPower = (num1, num2) => Math.pow(num1, num2);
-const nthRoot = (num1, num2) => Math.pow(num1, (1 / num2));
+const nthPower = (x, y) => Math.pow(x, y);
+const nthRoot = (x, y) => Math.pow(x, (1 / y));
 
 
 // Parse and perform specified operation
@@ -24,11 +33,27 @@ function operate(num1, num2, operation) {
         case 'multiply':    return multiply(num1, num2);
         case 'divide':      return divide(num1, num2);
 
+        case 'squared':     return squared(num1);
+        case 'square-root': return squareRoot(num1);
+        case 'factorial':   return factorial(num1);
+        case 'inverse':     return inverse(num1);
+        case 'log-base-2':  return log2(num1);
+        case 'natural-log': return ln(num1);
+
         case 'nth-power':   return nthPower(num1, num2);
         case 'nth-root':    return nthRoot(num1, num2);
 
         default:            return undefined;
     }
+}
+
+
+// Extended function definitions
+function recursiveFactorial(n) {
+    if (n === 0)
+        return 1;
+    else
+        return recursiveFactorial(n * recursiveFactorial(n - 1));
 }
 
 
