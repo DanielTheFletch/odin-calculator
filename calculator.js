@@ -83,6 +83,34 @@ digitButtons.forEach(button => {
     });
 });
 
+// Set up constants
+const constantButtons = document.querySelectorAll('.constant');
+constantButtons.forEach(button => {
+    button.addEventListener('click', function() {
+        // Will always reset display
+        clearDisplay();
+        operation.selected = false;
+        operation.complete = false;
+        operation.unaryExecuted = true;
+
+        // Track and display current operand
+        switch (this.value)
+        {
+            case 'pi':
+                state.display = Math.PI.toString();
+                break;
+            case 'e':
+                state.display = Math.E.toString();
+                break;
+            default:
+                state.display = NaN;
+                break;
+        }
+
+        updateDisplayArea();
+    });
+});
+
 
 // Set up unary operator buttons (x ^ 2, sqrt(x), x!, 1/x, log x, ln x)
 const unaryOperatorButtons = document.querySelectorAll('.operator-unary');
