@@ -79,8 +79,8 @@ digitButtons.forEach(button => {
 });
 
 
-// Set up operator (+, -, *, /) buttons
-const operatorButtons = document.querySelectorAll('.operator');
+// Set up binary operator buttons (+, -, *, /, x ^ y, y root x)
+const operatorButtons = document.querySelectorAll('.operator-binary');
 operatorButtons.forEach(button => {
     button.addEventListener('click', function() {
         if (!operation.selected && state.display)
@@ -104,7 +104,7 @@ operatorButtons.forEach(button => {
 
 
 // Set up equals (=) function
-const equalsButton = document.querySelector('.equals');
+const equalsButton = document.querySelector('.func-equals');
 equalsButton.addEventListener('click', function() {
     if (operation.inProgress && !operation.selected)
     {
