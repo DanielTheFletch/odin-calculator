@@ -56,11 +56,12 @@ const digitButtons = document.querySelectorAll('.digit');
 digitButtons.forEach(button => {
     button.addEventListener('click', function() {
         // Reset display on new operand
-        if (operation.selected || operation.complete)
+        if (operation.selected || operation.complete || operation.unaryExecuted)
         {
             clearDisplay();
             operation.selected = false;
             operation.complete = false;
+            operation.unaryExecuted = false;
         }
 
         // Check for decimal insertion
@@ -88,7 +89,7 @@ unaryOperatorButtons.forEach(button => {
         {
             // Instantly perform operation on display value
             const unaryOperator = this.value;
-            const unaryOperand = displayArea.textContent;
+            const unaryOperand = state.display;
             compute(unaryOperand, unaryOperator);
             operation.unaryExecuted = true;
         }
@@ -107,10 +108,7 @@ binaryOperatorButtons.forEach(button => {
             {
                 // Check for unary operator usage
                 if (operation.unaryExecuted)
-                {
-                    state.display = displayArea.textContent;
                     operation.unaryExecuted = false;
-                }
                 
                 // Perform intermediary calculation
                 updateSecond();
@@ -134,10 +132,7 @@ equalsButton.addEventListener('click', function() {
     {
         // Check for unary operator usage
         if (operation.unaryExecuted)
-        {
-            state.display = displayArea.textContent;
             operation.unaryExecuted = false;
-        }
 
         // Perform final calculation
         updateSecond();
@@ -158,4 +153,19 @@ clearButton.addEventListener('click', function() {
     clearDisplay();
     state.operator = '';
     displayArea.textContent = '0';
+});
+
+
+// Set up sign toggle (+/-) function
+const toggleButton = document.querySelector('.func-sign-toggle');
+toggleButton.addEventListener('click', function() {
+    if (state.display && !operation.selected)
+    {
+        if (state.display.startsWith('-'))
+            state.display = state.display.substring(1);
+        else
+            state.display = '-' + state.display;
+
+        updateDisplayArea();
+    }
 });
