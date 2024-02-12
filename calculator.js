@@ -13,6 +13,7 @@ const state = {
     first: '',
     second: '',
     operator: '',
+    percent: false,
 };
 
 
@@ -40,6 +41,8 @@ const updateDisplayArea = () => displayArea.textContent = state.display;
 // Compute the currently in-progress operation
 function compute(num1, operator, num2 = '') {
     let result = operate(num1, num2, operator);
+    if (typeof result !== 'string')
+        result = result.toString();
 
     // Truncate to 10 digits on display
     if (typeof result === 'number' && result.toString().length > 10)
@@ -165,6 +168,27 @@ toggleButton.addEventListener('click', function() {
             state.display = state.display.substring(1);
         else
             state.display = '-' + state.display;
+
+        updateDisplayArea();
+    }
+});
+
+
+// Set up percent button
+const percentButton = document.querySelector('.func-percent');
+percentButton.addEventListener('click', function() {
+    if (state.display && !operation.selected)
+    {
+        if (state.percent)
+        {
+            state.display = (parseFloat(state.display) * 100).toString();
+            state.percent = false;
+        }
+        else
+        {
+            state.display = (parseFloat(state.display) / 100).toString();
+            state.percent = true;
+        }
 
         updateDisplayArea();
     }
