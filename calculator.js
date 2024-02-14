@@ -94,10 +94,10 @@ constantButtons.forEach(button => {
         switch (this.value)
         {
             case 'pi':
-                state.display = Math.PI.toString();
+                state.display = Math.PI.toString().substring(0, 15);
                 break;
             case 'e':
-                state.display = Math.E.toString();
+                state.display = Math.E.toString().substring(0, 15);
                 break;
             default:
                 state.display = NaN;
