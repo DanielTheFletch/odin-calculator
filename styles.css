@@ -33,7 +33,7 @@ body {
   flex-direction: column;
   justify-content: center;
 
-  width: calc(var(--button-width) * 6);
+  width: calc(var(--button-width) * 4);
   height: calc(var(--button-height) * 1.25);
 }
 
