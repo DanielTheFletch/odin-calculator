@@ -8,9 +8,11 @@
   --button-width: 5rem;
   --button-height: 3rem;
 
-  --chocolate-primary: #694A3A;
+  --chocolate-primary: #613A3A;
   --chocolate-buttons: #E8DDB5;
-  --chocolate-display: #8E9AAF;
+  --chocolate-display: #87919E;
+  --chocolate-clear: #EF476F;
+  --chocolate-operations: #F85A3E;
 }
 
 body {
@@ -32,7 +34,7 @@ body {
 
   margin-top: calc(var(--button-height) * 2.675);
   width: calc(var(--button-width) * 4.675);
-  height: calc(var(--button-height) * 10)
+  height: calc(var(--button-height) * 11)
 }
 
 .display-container {
@@ -60,6 +62,12 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+.calc-row-1 {
+  border-bottom: 1px solid rgb(0, 0, 0, 25%);
+  margin-bottom: 0.5rem;
+  padding-bottom: 0.5rem;
 }
 
 
@@ -91,11 +99,21 @@ body {
 }
 
 .theme-chocolate button {
+  background-color: var(--chocolate-operations);
+}
+
+.theme-chocolate .digit,
+.theme-chocolate .calc-row-0 button,
+.theme-chocolate .calc-row-1 button {
   background-color: var(--chocolate-buttons);
 }
 
 .theme-chocolate > .display-container, .theme-chocolate .display-content {
   background-color: var(--chocolate-display);
+}
+
+.theme-chocolate .func-clear {
+  background-color: var(--chocolate-clear);
 }
 
 
