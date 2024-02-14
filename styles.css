@@ -32,9 +32,10 @@ body {
   justify-content: center;
   align-items: center;
 
+  border: 10px solid black;
   margin-top: calc(var(--button-height) * 2.675);
   width: calc(var(--button-width) * 4.675);
-  height: calc(var(--button-height) * 11)
+  height: calc(var(--button-height) * 12)
 }
 
 .display-container {
@@ -43,7 +44,6 @@ body {
   justify-content: center;
 
   font-size: 1.5rem;
-  margin-bottom: 16px;
   padding: 2px 8px;
   width: calc(var(--button-width) * 4 + 0.1875rem);
   height: calc(var(--button-height) * 0.875);
@@ -64,10 +64,22 @@ body {
   align-items: center;
 }
 
-.calc-row-1 {
+.calc-row-0 {
+  border-top: 1px solid rgb(0, 0, 0, 25%);
+  margin-top: 0.5rem;
+  padding-top: 0.5rem;
+}
+
+.calc-row-1, .calc-row-6 {
   border-bottom: 1px solid rgb(0, 0, 0, 25%);
   margin-bottom: 0.5rem;
   padding-bottom: 0.5rem;
+}
+
+.calc-row.calc-row-colors {
+  display: flex;
+  justify-content: space-around;
+  width: 75%;
 }
 
 
@@ -82,6 +94,11 @@ body {
 
 .calc-row > button.digit-0 {
   width: calc(var(--button-width) * 2.0675);
+}
+
+.calc-row > button.color {
+  width: 3.5rem;
+  height: 3.5rem;
 }
 
 .radicand {
@@ -114,6 +131,14 @@ body {
 
 .theme-chocolate .func-clear {
   background-color: var(--chocolate-clear);
+}
+
+
+/* --- COLOR THEME BUTTONS --- */
+button.color {
+  border: 5px solid black;
+  border-radius: 12.5%;
+  background-color: white;
 }
 
 
