@@ -38,6 +38,11 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
+
+  background-color: slategray;
+  background-image: radial-gradient(lightblue 0%, transparent 87.5%);
+
+  min-height: calc(var(--button-height) * 16);
 }
 
 button:active {
@@ -53,7 +58,6 @@ button:active {
   align-items: center;
 
   border: 7.5px groove black;
-  margin-top: calc(var(--button-height) * 2.675);
   padding: 0.75rem 0;
 
   width: calc(var(--button-width) * 4.675);
