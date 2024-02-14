@@ -11,19 +11,19 @@
   --chocolate-primary: #613A3A;
   --chocolate-buttons: #E8DDB5;
   --chocolate-display: #87919E;
-  --chocolate-clear: #EF476F;
+  --chocolate-equals: #EF476F;
   --chocolate-operations: #F85A3E;
 
-  --strawberry-primary: #613A3A;
-  --strawberry-buttons: #E8DDB5;
-  --strawberry-display: #87919E;
-  --strawberry-clear: #EF476F;
-  --strawberry-operations: #F85A3E;
+  --strawberry-primary: #A53860;
+  --strawberry-buttons: #FFA5AB;
+  --strawberry-display: #30011E;
+  --strawberry-equals: #F9DBBD;
+  --strawberry-operations: #DA627D;
 
   --vanilla-primary: #613A3A;
   --vanilla-buttons: #E8DDB5;
   --vanilla-display: #87919E;
-  --vanilla-clear: #EF476F;
+  --vanilla-equals: #EF476F;
   --vanilla-operations: #F85A3E;
 }
 
@@ -128,7 +128,8 @@ body {
 
 .theme-chocolate .digit,
 .theme-chocolate .calc-row-0 button,
-.theme-chocolate .calc-row-1 button {
+.theme-chocolate .calc-row-1 button,
+.theme-chocolate .calc-row-colors button {
   background-color: var(--chocolate-buttons);
 }
 
@@ -136,8 +137,8 @@ body {
   background-color: var(--chocolate-display);
 }
 
-.theme-chocolate .func-clear {
-  background-color: var(--chocolate-clear);
+.theme-chocolate .func-equals {
+  background-color: var(--chocolate-equals);
 }
 
 .theme-strawberry {
@@ -150,16 +151,18 @@ body {
 
 .theme-strawberry .digit,
 .theme-strawberry .calc-row-0 button,
-.theme-strawberry .calc-row-1 button {
+.theme-strawberry .calc-row-1 button,
+.theme-strawberry .calc-row-colors button {
   background-color: var(--strawberry-buttons);
 }
 
 .theme-strawberry > .display-container, .theme-strawberry .display-content {
   background-color: var(--strawberry-display);
+  color: white;
 }
 
-.theme-strawberry .func-clear {
-  background-color: var(--strawberry-clear);
+.theme-strawberry .func-equals {
+  background-color: var(--strawberry-equals);
 }
 
 .theme-vanilla {
@@ -172,7 +175,8 @@ body {
 
 .theme-vanilla .digit,
 .theme-vanilla .calc-row-0 button,
-.theme-vanilla .calc-row-1 button {
+.theme-vanilla .calc-row-1 button,
+.theme-vanilla .calc-row-colors button {
   background-color: var(--vanilla-buttons);
 }
 
@@ -180,8 +184,8 @@ body {
   background-color: var(--vanilla-display);
 }
 
-.theme-vanilla .func-clear {
-  background-color: var(--vanilla-clear);
+.theme-vanilla .func-equals {
+  background-color: var(--vanilla-equals);
 }
 
 
@@ -189,7 +193,6 @@ body {
 button.color {
   border: 2.25px solid black;
   border-radius: 12.5%;
-  background-color: white;
   font-size: 2.25rem;
   text-shadow: 2.25px 2.25px 1.5px black;
   width: 4.5rem;
