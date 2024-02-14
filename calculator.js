@@ -32,7 +32,6 @@ const operation = {
 };
 
 
-
 // Update the display area on the DOM Tree
 const displayArea = document.querySelector('.display-content');
 const updateDisplayArea = () => displayArea.textContent = state.display;
@@ -230,4 +229,17 @@ percentButton.addEventListener('click', function() {
 
         updateDisplayArea();
     }
+});
+
+
+// Set up color theme buttons
+const calculator = document.querySelector('.calculator');
+const colorButtons = document.querySelectorAll('.color');
+colorButtons.forEach(button => {
+    button.addEventListener('click', function() {
+        calculator.classList.remove('theme-chocolate');
+        calculator.classList.remove('theme-vanilla');
+        calculator.classList.remove('theme-strawberry');
+        calculator.classList.add(`theme-${this.value}`);
+    });
 });
