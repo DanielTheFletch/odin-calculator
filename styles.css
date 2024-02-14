@@ -7,6 +7,10 @@
 :root {
   --button-width: 5.5rem;
   --button-height: 3.75rem;
+
+  --chocolate-primary: #694A3A;
+  --chocolate-buttons: #E8DDB5;
+  --chocolate-display: #8E9AAF;
 }
 
 body {
@@ -23,9 +27,11 @@ body {
 .calculator {
   display: flex;
   flex-direction: column;
-  align-items: flex-end;
+  align-items: center;
 
   margin-top: calc(var(--button-height) * 2.675);
+  width: calc(var(--button-width) * 4.675);
+  height: calc(var(--button-height) * 10)
 }
 
 .display-container {
@@ -69,3 +75,25 @@ body {
   position: relative;
   top: 5px;
 }
+
+
+/* --- COLOR THEMES --- */
+.theme-chocolate {
+  background-color: var(--chocolate-primary);
+}
+
+.theme-chocolate button {
+  background-color: var(--chocolate-buttons);
+}
+
+.theme-chocolate .display-content {
+  background-color: var(--chocolate-display);
+}
+
+
+/*
+Chocolate Theme
+    Calculator color: #694A3A 
+    Button BG color: #E8DDB5
+    Display BG color: #8E9AAF
+*/
