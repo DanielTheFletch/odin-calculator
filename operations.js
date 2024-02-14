@@ -13,10 +13,10 @@ const divide = (x, y) => ((y === 0) ? 'ERROR' : (x / y));
 // Additional unary operations
 const squared = x => Math.pow(x, 2);
 const squareRoot = x => Math.sqrt(x);
-const factorial = x => recursiveFactorial(Math.round(x));
+const factorial = x => Number.isInteger(x) ? recursiveFactorial(x) : x;
 const inverse = x => ((x === 0) ? 'ERROR' : (1 / x));
 const log2 = x => Math.log2(x);
-const ln = x => Math.ln(x);
+const ln = x => Math.log(x);
 
 
 // Additional binary operations
@@ -48,12 +48,12 @@ function operate(num1, num2, operation) {
 }
 
 
-// Extended function definitions
+// Recursive factorial implementation
 function recursiveFactorial(n) {
-    if (n === 0)
+    if (n === 0 || n === 1)
         return 1;
     else
-        return recursiveFactorial(n * recursiveFactorial(n - 1));
+        return n * recursiveFactorial(n - 1);
 }
 
 

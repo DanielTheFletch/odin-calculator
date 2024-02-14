@@ -120,7 +120,7 @@ unaryOperatorButtons.forEach(button => {
         {
             // Instantly perform operation on display value
             const unaryOperator = this.value;
-            const unaryOperand = state.display;
+            const unaryOperand = parseFloat(state.display);
             compute(unaryOperand, unaryOperator);
             operation.unaryExecuted = true;
         }
@@ -179,10 +179,20 @@ equalsButton.addEventListener('click', function() {
 // Set up clear (AC) function
 const clearButton = document.querySelector('.func-clear');
 clearButton.addEventListener('click', function() {
+    // Clear state
     state.first = '';
     state.second = '';
-    clearDisplay();
+    state.display = '';
     state.operator = '';
+    state.percent = false;
+
+    // Clear operation tracking
+    operation.complete = false;
+    operation.inProgress = false;
+    operation.selected = false;
+    operation.unaryExecuted = false;
+
+    // Revert display to default
     displayArea.textContent = '0';
 });
 
