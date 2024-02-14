@@ -38,6 +38,6 @@ not optimized for mobile viewing. View on desktop for the intended user experien
     - Portfolio site: [daniel-fletcher-portfolio.com](https://www.daniel-fletcher-portfolio.com)
 - Project specifications from **The Odin Project** online curriculum
     - Home page: [The Odin Project](https://www.theodinproject.com/)
-    - Project specifications: [Etch-a-Sketch](https://www.theodinproject.com/lessons/foundations-calculator)
+    - Project specifications: [Calculator](https://www.theodinproject.com/lessons/foundations-calculator)
 
 
