@@ -13,6 +13,18 @@
   --chocolate-display: #87919E;
   --chocolate-clear: #EF476F;
   --chocolate-operations: #F85A3E;
+
+  --strawberry-primary: #613A3A;
+  --strawberry-buttons: #E8DDB5;
+  --strawberry-display: #87919E;
+  --strawberry-clear: #EF476F;
+  --strawberry-operations: #F85A3E;
+
+  --vanilla-primary: #613A3A;
+  --vanilla-buttons: #E8DDB5;
+  --vanilla-display: #87919E;
+  --vanilla-clear: #EF476F;
+  --vanilla-operations: #F85A3E;
 }
 
 body {
@@ -128,6 +140,50 @@ body {
   background-color: var(--chocolate-clear);
 }
 
+.theme-strawberry {
+  background-color: var(--strawberry-primary);
+}
+
+.theme-strawberry button {
+  background-color: var(--strawberry-operations);
+}
+
+.theme-strawberry .digit,
+.theme-strawberry .calc-row-0 button,
+.theme-strawberry .calc-row-1 button {
+  background-color: var(--strawberry-buttons);
+}
+
+.theme-strawberry > .display-container, .theme-strawberry .display-content {
+  background-color: var(--strawberry-display);
+}
+
+.theme-strawberry .func-clear {
+  background-color: var(--strawberry-clear);
+}
+
+.theme-vanilla {
+  background-color: var(--vanilla-primary);
+}
+
+.theme-vanilla button {
+  background-color: var(--vanilla-operations);
+}
+
+.theme-vanilla .digit,
+.theme-vanilla .calc-row-0 button,
+.theme-vanilla .calc-row-1 button {
+  background-color: var(--vanilla-buttons);
+}
+
+.theme-vanilla > .display-container, .theme-vanilla .display-content {
+  background-color: var(--vanilla-display);
+}
+
+.theme-vanilla .func-clear {
+  background-color: var(--vanilla-clear);
+}
+
 
 /* --- COLOR THEME BUTTONS --- */
 button.color {
@@ -145,11 +201,11 @@ button.color {
 }
 
 .color-vanilla {
-  color: var(--chocolate-primary);
+  color: var(--vanilla-primary);
 }
 
 .color-strawberry {
-  color: var(--chocolate-primary);
+  color: var(--strawberry-primary);
 }
 
 
