@@ -5,8 +5,8 @@
 
 /* --- GENERAL PROPERTIES --- */
 :root {
-  --button-width: 5.5rem;
-  --button-height: 3.75rem;
+  --button-width: 5rem;
+  --button-height: 3rem;
 
   --chocolate-primary: #694A3A;
   --chocolate-buttons: #E8DDB5;
@@ -27,6 +27,7 @@ body {
 .calculator {
   display: flex;
   flex-direction: column;
+  justify-content: center;
   align-items: center;
 
   margin-top: calc(var(--button-height) * 2.675);
@@ -39,15 +40,20 @@ body {
   flex-direction: column;
   justify-content: center;
 
-  width: calc(var(--button-width) * 4);
-  height: calc(var(--button-height) * 1.25);
+  font-size: 1.5rem;
+  margin-bottom: 16px;
+  padding: 2px 8px;
+  width: calc(var(--button-width) * 4 + 0.1875rem);
+  height: calc(var(--button-height) * 0.875);
 }
 
 .display-content {
-  border: 2.25px solid black;
+  /* border: 2.25px solid black; */
   font-size: 2rem;
   font-weight: bold;
   text-align: right;
+  width: 100%;
+  height: 100%;
 }
 
 .calc-row {
@@ -59,13 +65,15 @@ body {
 
 /* --- CALCULATOR BUTTONS --- */
 .calc-row > button {
+  border: none;
   font-size: 1.5rem;
+  margin: 0.125em;
   width: var(--button-width);
   height: var(--button-height);
 }
 
 .calc-row > button.digit-0 {
-  width: calc(var(--button-width) * 2);
+  width: calc(var(--button-width) * 2.0675);
 }
 
 .radicand {
@@ -86,7 +94,7 @@ body {
   background-color: var(--chocolate-buttons);
 }
 
-.theme-chocolate .display-content {
+.theme-chocolate > .display-container, .theme-chocolate .display-content {
   background-color: var(--chocolate-display);
 }
 
