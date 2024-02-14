@@ -3,10 +3,17 @@
 /* Calculator */
 
 
+@import url('https://fonts.googleapis.com/css2?family=Chakra+Petch:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@100..900&display=swap');
+
+
 /* --- GENERAL PROPERTIES --- */
 :root {
   --button-width: 5rem;
   --button-height: 3rem;
+
+  --font-buttons: 'Roboto Slab', system-ui, serif;
+  --font-display: 'Chakra Petch', sans-serif;
 
   --chocolate-primary: #795C5F;
   --chocolate-buttons: #F2E29F;
@@ -63,8 +70,8 @@ body {
 
 .display-content {
   /* border: 2.25px solid black; */
+  font-family: var(--font-display);
   font-size: 2rem;
-  font-weight: bold;
   text-align: right;
   width: 100%;
   height: 100%;
@@ -98,10 +105,21 @@ body {
 /* --- CALCULATOR BUTTONS --- */
 .calc-row > button {
   border: none;
+  font-family: var(--font-buttons);
   font-size: 1.5rem;
   margin: 0.125em;
   width: var(--button-width);
   height: var(--button-height);
+}
+
+button.operator-squared, button.operator-nth-power,
+button.operator-square-root, button.operator-nth-root,
+button.operator-log-base-2, button.operator-natural-log {
+  font-size: 1.25rem;
+}
+
+sub, sup {
+  font-size:  0.875rem;
 }
 
 .calc-row > button.digit-0 {
