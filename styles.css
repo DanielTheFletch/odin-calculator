@@ -40,6 +40,10 @@ body {
   align-items: center;
 }
 
+button:active {
+  box-shadow: inset 1px 1px 5px black;
+}
+
 
 /* --- CALCULATOR LAYOUT --- */
 .calculator {
@@ -48,7 +52,9 @@ body {
   justify-content: center;
   align-items: center;
 
+  border: 7.5px groove black;
   margin-top: calc(var(--button-height) * 2.675);
+  padding: 0.75rem 0;
 
   width: calc(var(--button-width) * 4.675);
   height: calc(var(--button-height) * 12)
@@ -102,7 +108,8 @@ body {
 
 /* --- CALCULATOR BUTTONS --- */
 .calc-row > button {
-  border: none;
+  border: 2.5px solid black;
+  border-radius: 0.25em;
   font-family: var(--font-buttons);
   font-size: 1.5rem;
   margin: 0.125em;
