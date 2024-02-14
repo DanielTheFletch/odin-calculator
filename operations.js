@@ -13,8 +13,6 @@ const divide = (x, y) => ((y === 0) ? 'ERROR' : (x / y));
 // Additional unary operations
 const squared = x => Math.pow(x, 2);
 const squareRoot = x => Math.sqrt(x);
-const factorial = x => Number.isInteger(x) ? recursiveFactorial(x) : x;
-const inverse = x => ((x === 0) ? 'ERROR' : (1 / x));
 const log2 = x => Math.log2(x);
 const ln = x => Math.log(x);
 
@@ -35,8 +33,6 @@ function operate(num1, num2, operation) {
 
         case 'squared':     return squared(num1);
         case 'square-root': return squareRoot(num1);
-        case 'factorial':   return factorial(num1);
-        case 'inverse':     return inverse(num1);
         case 'log-base-2':  return log2(num1);
         case 'natural-log': return ln(num1);
 
@@ -45,15 +41,6 @@ function operate(num1, num2, operation) {
 
         default:            return undefined;
     }
-}
-
-
-// Recursive factorial implementation
-function recursiveFactorial(n) {
-    if (n === 0 || n === 1)
-        return 1;
-    else
-        return n * recursiveFactorial(n - 1);
 }
 
 
