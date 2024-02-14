@@ -7,7 +7,7 @@
 import { operate } from './operations.js'
 
 
-// State management: Variables
+// State management
 const state = {
     display: '',
     first: '',
@@ -15,13 +15,6 @@ const state = {
     operator: '',
     percent: false,
 };
-
-
-// State management: Functions
-const updateFirst = () => state.first = parseFloat(state.display);
-const updateSecond = () => state.second = parseFloat(state.display);
-const clearDisplay = () => state.display = '';
-
 
 // Status of current operation
 const operation = {
@@ -31,24 +24,29 @@ const operation = {
     unaryExecuted: false,
 };
 
+// Update calculator state
+const updateFirst = () => state.first = parseFloat(state.display);
+const updateSecond = () => state.second = parseFloat(state.display);
+const clearDisplay = () => state.display = '';
 
 // Update the display area on the DOM Tree
 const displayArea = document.querySelector('.display-content');
 const updateDisplayArea = () => displayArea.textContent = state.display;
 
 
-// Compute the currently in-progress operation
+// Compute the operation currently in progress
 function compute(num1, operator, num2 = '') {
+    // Convert result to string, if necessary
     let result = operate(num1, num2, operator);
     if (typeof result !== 'string')
         result = result.toString();
 
     // Truncate to 10 digits on display
-    if (typeof result === 'number' && result.toString().length > 10)
-        result = result.toString().substring(0, 10);
+    if (result.length > 10)
+        result = result.substring(0, 10);
 
+    // Update display
     state.display = result;
-
     updateDisplayArea();
 }
 
@@ -75,12 +73,12 @@ digitButtons.forEach(button => {
         {
             if (validDecimal && !state.display)
                 state.display += '0';
-
             state.display += this.value;
             updateDisplayArea();
         }
     });
 });
+
 
 // Set up constants
 const constantButtons = document.querySelectorAll('.constant');
@@ -105,7 +103,6 @@ constantButtons.forEach(button => {
                 state.display = NaN;
                 break;
         }
-
         updateDisplayArea();
     });
 });
@@ -216,11 +213,14 @@ const percentButton = document.querySelector('.func-percent');
 percentButton.addEventListener('click', function() {
     if (state.display && !operation.selected)
     {
+        // Toggle percent mode ON -> OFF
         if (state.percent)
         {
             state.display = (parseFloat(state.display) * 100).toString();
             state.percent = false;
         }
+
+        // Toggle percent mode OFF -> ON
         else
         {
             state.display = (parseFloat(state.display) / 100).toString();

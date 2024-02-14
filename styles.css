@@ -15,32 +15,29 @@
   --font-buttons: 'Roboto Slab', system-ui, serif;
   --font-display: 'Chakra Petch', sans-serif;
 
-  --chocolate-primary: #795C5F;
-  --chocolate-buttons: #F2E29F;
-  --chocolate-display: #0C1B33;
-  --chocolate-equals: #D9B26F;
-  --chocolate-operations: #FADF7F;
+  --vanilla-primary: #EBEBEB;
+  --vanilla-buttons: #CCDCDC;
+  --vanilla-operations: #9AA6AB;
+  --vanilla-equals: #CFCED7;
+  --vanilla-display: #474350;
 
   --strawberry-primary: #FFB8DE;
   --strawberry-buttons: #FFDDE1;
-  --strawberry-display: #302F4D;
-  --strawberry-equals: #FF36AB;
   --strawberry-operations: #FF74D4;
+  --strawberry-equals: #FF36AB;
+  --strawberry-display: #302F4D;
 
-  --vanilla-primary: #EBEBEB;
-  --vanilla-buttons: #CCDCDC;
-  --vanilla-display: #474350;
-  --vanilla-equals: #CFCED7;
-  --vanilla-operations: #9AA6AB;
+  --chocolate-primary: #795C5F;
+  --chocolate-buttons: #F2E29F;
+  --chocolate-operations: #FADF7F;
+  --chocolate-equals: #D9B26F;
+  --chocolate-display: #0C1B33;
 }
 
 body {
   display: flex;
   justify-content: center;
   align-items: center;
-
-  margin: 0;
-  padding: 0;
 }
 
 
@@ -51,8 +48,8 @@ body {
   justify-content: center;
   align-items: center;
 
-  border: 10px solid black;
   margin-top: calc(var(--button-height) * 2.675);
+
   width: calc(var(--button-width) * 4.675);
   height: calc(var(--button-height) * 12)
 }
@@ -64,15 +61,16 @@ body {
 
   font-size: 1.5rem;
   padding: 2px 8px;
+
   width: calc(var(--button-width) * 4 + 0.1875rem);
   height: calc(var(--button-height) * 0.875);
 }
 
 .display-content {
-  /* border: 2.25px solid black; */
   font-family: var(--font-display);
   font-size: 2rem;
   text-align: right;
+
   width: 100%;
   height: 100%;
 }
@@ -108,6 +106,7 @@ body {
   font-family: var(--font-buttons);
   font-size: 1.5rem;
   margin: 0.125em;
+
   width: var(--button-width);
   height: var(--button-height);
 }
@@ -119,19 +118,20 @@ button.operator-log-base-2, button.operator-natural-log {
 }
 
 sub, sup {
-  font-size:  0.875rem;
+  font-size: 0.875rem;
 }
 
 .calc-row > button.digit-0 {
   width: calc(var(--button-width) * 2.0675);
 }
 
+.radical {
+  font-size: 1.5rem;
+}
+
 .radicand {
-  border-top: 2px solid black;
-  margin: 0;
-  padding: 0;
-  position: relative;
-  top: 5px;
+  border-top: 1.125px solid black;
+  font-size: 1.25rem;
 }
 
 
@@ -215,6 +215,7 @@ button.color {
   border-radius: 12.5%;
   font-size: 2.25rem;
   text-shadow: 2.25px 2.25px 1.5px black;
+
   width: 4.5rem;
   height: 4.5rem;
 }
@@ -230,11 +231,3 @@ button.color {
 .color-strawberry {
   color: var(--strawberry-primary);
 }
-
-
-/*
-Chocolate Theme
-    Calculator color: #694A3A 
-    Button BG color: #E8DDB5
-    Display BG color: #8E9AAF
-*/
