@@ -76,10 +76,10 @@ body {
   padding-bottom: 0.5rem;
 }
 
-.calc-row.calc-row-colors {
+.calc-row-colors {
   display: flex;
   justify-content: space-around;
-  width: 75%;
+  width: 87.5%;
 }
 
 
@@ -94,11 +94,6 @@ body {
 
 .calc-row > button.digit-0 {
   width: calc(var(--button-width) * 2.0675);
-}
-
-.calc-row > button.color {
-  width: 3.5rem;
-  height: 3.5rem;
 }
 
 .radicand {
@@ -136,9 +131,25 @@ body {
 
 /* --- COLOR THEME BUTTONS --- */
 button.color {
-  border: 5px solid black;
+  border: 2.25px solid black;
   border-radius: 12.5%;
   background-color: white;
+  font-size: 2.25rem;
+  text-shadow: 2.25px 2.25px 1.5px black;
+  width: 4.5rem;
+  height: 4.5rem;
+}
+
+.color-chocolate {
+  color: var(--chocolate-primary);
+}
+
+.color-vanilla {
+  color: var(--chocolate-primary);
+}
+
+.color-strawberry {
+  color: var(--chocolate-primary);
 }
 
 
