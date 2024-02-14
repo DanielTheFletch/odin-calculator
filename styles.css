@@ -20,11 +20,11 @@
   --strawberry-equals: #F9DBBD;
   --strawberry-operations: #DA627D;
 
-  --vanilla-primary: #613A3A;
-  --vanilla-buttons: #E8DDB5;
-  --vanilla-display: #87919E;
-  --vanilla-equals: #EF476F;
-  --vanilla-operations: #F85A3E;
+  --vanilla-primary: #FBFBF2;
+  --vanilla-buttons: #E5E6E4;
+  --vanilla-display: #201E1F;
+  --vanilla-equals: #A6A2A2;
+  --vanilla-operations: #CFD2CD;
 }
 
 body {
@@ -182,6 +182,7 @@ body {
 
 .theme-vanilla > .display-container, .theme-vanilla .display-content {
   background-color: var(--vanilla-display);
+  color: white;
 }
 
 .theme-vanilla .func-equals {
