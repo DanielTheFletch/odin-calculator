@@ -24,6 +24,7 @@ const operation = {
     unaryExecuted: false,
 };
 
+
 // Update calculator state
 const updateFirst = () => state.first = parseFloat(state.display);
 const updateSecond = () => state.second = parseFloat(state.display);

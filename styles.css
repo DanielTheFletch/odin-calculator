@@ -21,17 +21,17 @@
   --vanilla-equals: #CFCED7;
   --vanilla-display: #474350;
 
-  --strawberry-primary: #FFB8DE;
-  --strawberry-buttons: #FFDDE1;
-  --strawberry-operations: #FF74D4;
-  --strawberry-equals: #FF36AB;
-  --strawberry-display: #302F4D;
-
   --chocolate-primary: #795C5F;
   --chocolate-buttons: #F2E29F;
   --chocolate-operations: #FADF7F;
   --chocolate-equals: #D9B26F;
   --chocolate-display: #0C1B33;
+
+  --strawberry-primary: #FFB8DE;
+  --strawberry-buttons: #FFDDE1;
+  --strawberry-operations: #FF74D4;
+  --strawberry-equals: #FF36AB;
+  --strawberry-display: #302F4D;
 }
 
 body {
@@ -147,6 +147,30 @@ sub, sup {
 
 
 /* --- COLOR THEMES --- */
+.theme-vanilla {
+  background-color: var(--vanilla-primary);
+}
+
+.theme-vanilla button {
+  background-color: var(--vanilla-operations);
+}
+
+.theme-vanilla .digit,
+.theme-vanilla .calc-row-0 button,
+.theme-vanilla .calc-row-1 button,
+.theme-vanilla .calc-row-colors button {
+  background-color: var(--vanilla-buttons);
+}
+
+.theme-vanilla > .display-container, .theme-vanilla .display-content {
+  background-color: var(--vanilla-display);
+  color: white;
+}
+
+.theme-vanilla .func-equals {
+  background-color: var(--vanilla-equals);
+}
+
 .theme-chocolate {
   background-color: var(--chocolate-primary);
 }
@@ -195,48 +219,24 @@ sub, sup {
   background-color: var(--strawberry-equals);
 }
 
-.theme-vanilla {
-  background-color: var(--vanilla-primary);
-}
-
-.theme-vanilla button {
-  background-color: var(--vanilla-operations);
-}
-
-.theme-vanilla .digit,
-.theme-vanilla .calc-row-0 button,
-.theme-vanilla .calc-row-1 button,
-.theme-vanilla .calc-row-colors button {
-  background-color: var(--vanilla-buttons);
-}
-
-.theme-vanilla > .display-container, .theme-vanilla .display-content {
-  background-color: var(--vanilla-display);
-  color: white;
-}
-
-.theme-vanilla .func-equals {
-  background-color: var(--vanilla-equals);
-}
-
 
 /* --- COLOR THEME BUTTONS --- */
 button.color {
   border: 2.25px solid black;
   border-radius: 12.5%;
   font-size: 2.25rem;
-  text-shadow: 2.25px 2.25px 1.5px black;
+  text-shadow: 1px 2.25px 2.5px black;
 
   width: 4.5rem;
   height: 4.5rem;
 }
 
-.color-chocolate {
-  color: var(--chocolate-primary);
-}
-
 .color-vanilla {
   color: var(--vanilla-primary);
+}
+
+.color-chocolate {
+  color: var(--chocolate-primary);
 }
 
 .color-strawberry {
