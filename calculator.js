@@ -41,9 +41,9 @@ function compute(num1, operator, num2 = '') {
     if (typeof result !== 'string')
         result = result.toString();
 
-    // Truncate to 10 digits on display
-    if (result.length > 10)
-        result = result.substring(0, 10);
+    // Truncate to 15 digits on display
+    if (result.length > 15)
+        result = result.substring(0, 15);
 
     // Update display
     state.display = result;
