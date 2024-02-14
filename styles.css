@@ -8,23 +8,23 @@
   --button-width: 5rem;
   --button-height: 3rem;
 
-  --chocolate-primary: #613A3A;
-  --chocolate-buttons: #E8DDB5;
-  --chocolate-display: #87919E;
-  --chocolate-equals: #EF476F;
-  --chocolate-operations: #F85A3E;
+  --chocolate-primary: #795C5F;
+  --chocolate-buttons: #F2E29F;
+  --chocolate-display: #0C1B33;
+  --chocolate-equals: #D9B26F;
+  --chocolate-operations: #FADF7F;
 
-  --strawberry-primary: #A53860;
-  --strawberry-buttons: #FFA5AB;
-  --strawberry-display: #30011E;
-  --strawberry-equals: #F9DBBD;
-  --strawberry-operations: #DA627D;
+  --strawberry-primary: #FFB8DE;
+  --strawberry-buttons: #FFDDE1;
+  --strawberry-display: #302F4D;
+  --strawberry-equals: #FF36AB;
+  --strawberry-operations: #FF74D4;
 
-  --vanilla-primary: #FBFBF2;
-  --vanilla-buttons: #E5E6E4;
-  --vanilla-display: #201E1F;
-  --vanilla-equals: #A6A2A2;
-  --vanilla-operations: #CFD2CD;
+  --vanilla-primary: #EBEBEB;
+  --vanilla-buttons: #CCDCDC;
+  --vanilla-display: #474350;
+  --vanilla-equals: #CFCED7;
+  --vanilla-operations: #9AA6AB;
 }
 
 body {
@@ -135,6 +135,7 @@ body {
 
 .theme-chocolate > .display-container, .theme-chocolate .display-content {
   background-color: var(--chocolate-display);
+  color: white;
 }
 
 .theme-chocolate .func-equals {
